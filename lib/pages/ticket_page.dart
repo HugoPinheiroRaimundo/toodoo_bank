@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:toodoo_bank/utils/default.dart';
-
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
 
@@ -21,10 +19,10 @@ class _TicketPage extends State<TicketPage> {
           Padding(
               padding: const EdgeInsets.only(top: 80, left: 40),
               child: Row(
-                children: const [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    size: 20,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back_ios),
+                    onPressed: () {},
                   ),
                   SizedBox(
                     width: 70,
@@ -58,7 +56,7 @@ class _TicketPage extends State<TicketPage> {
             label: "código de barras",
             hintText: "Digite aqui",
           ),
-          SizedBox(
+          const SizedBox(
             height: 352,
           ),
           const Text(
@@ -68,12 +66,12 @@ class _TicketPage extends State<TicketPage> {
                 color: Color(0xFF3D43CC),
                 fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           const CustomElevatedButton(
             label: "Continuar",
-            page: "",
+            page: "/ticketconfirmpage",
           )
         ],
       ),

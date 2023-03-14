@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../utils/default.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -22,9 +21,7 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14
-              //passar fonte do projeto aqui o estilo no caso
-              ),
+          style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
         ),
         const SizedBox(height: 10),
         SizedBox(
