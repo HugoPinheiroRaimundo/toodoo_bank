@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:toodoo_bank/utils/default.dart';
+import 'package:toodoo_bank/core/helpers/default.dart';
 
 class CustomText extends StatelessWidget {
   final String normalText;
@@ -20,6 +20,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       normalText,
+
       // style: DefaultConfig().defaultTextStyle(isBold, isGray,
       //          // DefaultConfig.defaultFont, fontSize
       //         )

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/default.dart';
+import '../core/helpers/default.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String page;

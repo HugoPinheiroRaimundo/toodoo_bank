@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/default.dart';
+import '../core/helpers/default.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
@@ -26,9 +26,11 @@ class CustomTextField extends StatelessWidget {
         const SizedBox(height: 10),
         SizedBox(
           width: 311,
-          height: 76,
+          height: 100,
           child: TextField(
-            maxLines: null,
+            enableSuggestions: true,
+            textInputAction: TextInputAction.done,
+            maxLines: 2,
             decoration: InputDecoration(
                 filled: true,
                 fillColor: DefaultConfig.defaultTextFieldColor,

@@ -17,17 +17,17 @@ class _TicketPage extends State<TicketPage> {
       child: Column(
         children: [
           Padding(
-              padding: const EdgeInsets.only(top: 80, left: 40),
+              padding: const EdgeInsets.only(top: 80, left: 30),
               child: Row(
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back_ios),
                     onPressed: () {},
                   ),
-                  SizedBox(
-                    width: 70,
+                  const SizedBox(
+                    width: 50,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Text(
                       "Pagamentos",
@@ -57,8 +57,10 @@ class _TicketPage extends State<TicketPage> {
             hintText: "Digite aqui",
           ),
           const SizedBox(
-            height: 352,
+            height: 300,
           ),
+          // isso é um butom que leva para a tela de Qrcode
+
           const Text(
             "Usar leitor de código",
             style: TextStyle(
@@ -71,6 +73,7 @@ class _TicketPage extends State<TicketPage> {
           ),
           const CustomElevatedButton(
             label: "Continuar",
+            // arrumar esse push aqui tá estranho
             page: "/ticketconfirmpage",
           )
         ],
