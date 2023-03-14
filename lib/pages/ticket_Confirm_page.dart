@@ -22,7 +22,7 @@ class _TicketConfirmState extends State<TicketConfirm> {
                   IconButton(
                     icon: const Icon(Icons.arrow_back_ios),
                     onPressed: () {
-                      Navigator.of(context).popAndPushNamed('/ticketpage');
+                      Navigator.of(context).pop();
                     },
                   ),
                   const SizedBox(

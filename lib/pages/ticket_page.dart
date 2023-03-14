@@ -59,17 +59,18 @@ class _TicketPage extends State<TicketPage> {
           const SizedBox(
             height: 300,
           ),
-          // isso é um butom que leva para a tela de Qrcode
-
-          const Text(
-            "Usar leitor de código",
-            style: TextStyle(
-                fontSize: 18,
-                color: Color(0xFF3D43CC),
-                fontWeight: FontWeight.bold),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("/");
+            },
+            style: const ButtonStyle(
+                overlayColor: MaterialStatePropertyAll(Colors.transparent),
+                textStyle: MaterialStatePropertyAll(TextStyle(
+                    color: Colors.cyanAccent, fontWeight: FontWeight.bold))),
+            child: const Text("Usar leitor de código"),
           ),
           const SizedBox(
-            height: 24,
+            height: 10,
           ),
           const CustomElevatedButton(
             label: "Continuar",
