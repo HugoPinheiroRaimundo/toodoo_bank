@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toodoo_bank/components/custom_text.dart';
+import '../core/default.dart';
 
 class TicketConfirm extends StatefulWidget {
   const TicketConfirm({super.key});
@@ -9,6 +9,8 @@ class TicketConfirm extends StatefulWidget {
 }
 
 class _TicketConfirmState extends State<TicketConfirm> {
+  bool isObscured = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,33 +40,55 @@ class _TicketConfirmState extends State<TicketConfirm> {
                   ),
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: const [
-                CustomText(
-                  normalText: "Saldo atual",
-                  fontSize: 12,
-                  isBold: false,
-                  isGray: true,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 4.0),
+                  child: Text("Saldo atual",
+                      style: TextStyle(
+                          color: DefaultConfig.defaultColorText, fontSize: 14)),
                 ),
-                Text("R 16.937,00  "),
-                Divider(
-                  color: Colors.black,
+                Row(
+                  children: [
+                    RichText(
+                        text: TextSpan(
+                            text: isObscured ? "" : "R\$ ",
+                            style: TextStyle(
+                                fontSize: 21,
+                                color: DefaultConfig.defaultColorText),
+                            children: [
+                          TextSpan(
+                              text: isObscured ? "•••••••" : "16.927,00",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: DefaultConfig.defaultColorText))
+                        ])),
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isObscured = !isObscured;
+                          });
+                        },
+                        icon: isObscured
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off))
+                  ],
                 ),
-                SizedBox(
-                  height: 24,
+                Divider(),
+                const Padding(
+                  padding: EdgeInsets.only(top: 24.0, bottom: 24.0),
+                  child: Text(
+                    "Dados do seu boleto",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
                 ),
-                CustomText(
-                    normalText: "Dados do seu boleto",
-                    fontSize: 16,
-                    isGray: true,
-                    isBold: true)
               ],
             ),
           )
