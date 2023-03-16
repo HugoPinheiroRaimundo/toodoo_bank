@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
+import '../core/default.dart';
 
 class TicketPage extends StatefulWidget {
   const TicketPage({super.key});
