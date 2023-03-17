@@ -26,7 +26,7 @@ class _TicketConfirmState extends State<TicketConfirm> {
         child: Column(
           children: [
             Padding(
-                padding: const EdgeInsets.only(top: 80, left: 30),
+                padding: const EdgeInsets.only(top: 80, left: 25),
                 child: Row(
                   children: [
                     IconButton(
@@ -41,7 +41,7 @@ class _TicketConfirmState extends State<TicketConfirm> {
                     const Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: Text(
-                        "Novo Pagamentos",
+                        "Novo Pagamento",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -92,44 +92,72 @@ class _TicketConfirmState extends State<TicketConfirm> {
                               : const Icon(Icons.visibility_off))
                     ],
                   ),
-                  Divider(),
+                  const Divider(),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Text("Dados do seu boleto"),
-                      SizedBox(
-                        height: 10,
+                      Text(
+                        "Dados do seu boleto",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
                       ),
-                      Text("R\$ 150,00"),
                       SizedBox(
-                        height: 10,
+                        height: 15,
+                      ),
+                      Text("Valor"),
+                      Text(
+                        "R\$ 150,00",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 15,
                       ),
                       Text("Data do Vencimento"),
-                      SizedBox(
-                        height: 10,
+                      Text(
+                        "12/12/2022",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text("12/12/2022"),
                       SizedBox(
-                        height: 10,
+                        height: 15,
                       ),
                       Text("Beneficiário"),
-                      SizedBox(
-                        height: 10,
+                      Text(
+                        "COPASA Cia. de Tratamento de Água... ",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text("COPASA Cia. de Tratamento de Água... "),
-                      const Divider(),
                       SizedBox(
-                        height: 10,
+                        height: 15,
                       ),
                       Text("Código de barras"),
                       Text(
-                          "84670000001-7 43590024020-9 \n02405000243-5 84221010811-9"),
+                        "84670000001-7 43590024020-9 \n02405000243-5 84221010811-9",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Divider(),
-                      Text("Pagar em ")
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "Pagar em ",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
                     ],
                   ),
                   ListTile(
-                    title: const Text("Pagar agora"),
+                    title: const Text(
+                      "Pagar agora",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     leading: Radio(
                         activeColor: Colors.blue,
                         value: 1,
@@ -139,15 +167,18 @@ class _TicketConfirmState extends State<TicketConfirm> {
                             _selectTile = value as int;
                           });
                         }),
-                    trailing: Text(
+                    trailing: const Text(
                       "12/05/2020",
                       style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                          color: Colors.indigo, fontWeight: FontWeight.bold),
                     ),
                   ),
                   const Divider(),
                   ListTile(
-                    title: const Text("Agendar"),
+                    title: const Text(
+                      "Agendar",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     leading: Radio(
                         activeColor: Colors.blue,
                         value: 1,
@@ -160,26 +191,29 @@ class _TicketConfirmState extends State<TicketConfirm> {
                     trailing: SvgPicture.asset("assets/icons/calenderIcon.svg"),
                   ),
                   const Divider(),
-                  SizedBox(
-                    height: 10,
+                  const SizedBox(
+                    height: 20,
                   ),
-                  Text("Descrição"),
-                  SizedBox(
-                    height: 10,
+                  const Text("Descrição"),
+                  const SizedBox(
+                    height: 5,
                   ),
                   SizedBox(
-                    width: 350,
+                    width: 330,
                     height: 100,
                     child: TextField(
                         decoration: InputDecoration(
+                            hintText: "Pagamento da água",
                             filled: true,
                             fillColor: DefaultConfig.defaultTextFieldColor,
                             hintStyle: const TextStyle(color: Colors.grey),
                             border: const OutlineInputBorder())),
                   ),
-                  Center(
-                      child: CustomElevatedButton(
-                          page: "", label: "Realizar Pagamento")),
+                  const SizedBox(
+                    width: 330,
+                    child: CustomElevatedButton(
+                        page: "", label: "Realizar Pagamento"),
+                  ),
                 ],
               ),
             ),

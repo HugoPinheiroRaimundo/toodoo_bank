@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
-import '../core/default.dart';
 
 class TicketPage extends StatefulWidget {
   const TicketPage({super.key});
@@ -64,11 +63,11 @@ class _TicketPage extends State<TicketPage> {
             onPressed: () {
               Navigator.of(context).pushNamed("/");
             },
-            style: const ButtonStyle(
-                overlayColor: MaterialStatePropertyAll(Colors.transparent),
-                textStyle: MaterialStatePropertyAll(TextStyle(
-                    color: Colors.cyanAccent, fontWeight: FontWeight.bold))),
-            child: const Text("Usar leitor de código"),
+            style: TextButton.styleFrom(primary: Colors.indigo),
+            child: const Text(
+              "Usar leitor de código",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ),
           const SizedBox(
             height: 10,
