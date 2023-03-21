@@ -200,7 +200,7 @@ class _TicketConfirmState extends State<TicketConfirm> {
                   ),
                   SizedBox(
                     width: 330,
-                    height: 100,
+                    height: 80,
                     child: TextField(
                         decoration: InputDecoration(
                             hintText: "Pagamento da água",

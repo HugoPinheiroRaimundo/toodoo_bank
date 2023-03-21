@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/custom_button.dart';
-import '../components/custom_textfield.dart';
+import '../core/default.dart';
 
 class TicketPage extends StatefulWidget {
   const TicketPage({super.key});
@@ -10,6 +9,26 @@ class TicketPage extends StatefulWidget {
 }
 
 class _TicketPage extends State<TicketPage> {
+  bool _isButtonEnabled = false;
+  final TextEditingController _controller = TextEditingController();
+
+  String? _validateBoleto(String value) {
+    // Regex para validar número de boleto
+    RegExp regex = RegExp(r'^[0-9]{47}$');
+
+    if (!regex.hasMatch(value)) {
+      return 'Boleto inválido';
+    }
+
+    return null;
+  }
+
+  void _updateButtonState(String text) {
+    setState(() {
+      _isButtonEnabled = text.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +71,23 @@ class _TicketPage extends State<TicketPage> {
           const SizedBox(
             height: 24,
           ),
-          const CustomTextField(
-            label: "código de barras",
-            hintText: "Digite aqui",
+          SizedBox(
+            width: 311,
+            height: 100,
+            child: TextField(
+                maxLines: 2,
+                textInputAction: TextInputAction.send,
+                controller: _controller,
+                onChanged: (text) => _updateButtonState(text),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: DefaultConfig.defaultTextFieldColor,
+                    hintText: "Digite aqui ",
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: const OutlineInputBorder())),
           ),
           const SizedBox(
-            height: 300,
+            height: 270,
           ),
           TextButton(
             onPressed: () {
@@ -72,10 +102,26 @@ class _TicketPage extends State<TicketPage> {
           const SizedBox(
             height: 10,
           ),
-          const CustomElevatedButton(
-            label: "Continuar",
-            // arrumar esse push aqui tá estranho
-            page: "/ticketconfirmpage",
+          SizedBox(
+            height: 56,
+            width: 311,
+            child: ElevatedButton(
+              onPressed: _isButtonEnabled
+                  ? () {
+                      Navigator.pushNamed(context, '/ticketconfirmpage');
+                    }
+                  : null,
+              style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  backgroundColor: MaterialStateProperty.all(
+                    _isButtonEnabled
+                        ? DefaultConfig.defaultThemeColor
+                        : Colors.grey,
+                  )),
+              child: const Text(
+                "Continuar",
+              ),
+            ),
           )
         ],
       ),
