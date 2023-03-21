@@ -80,6 +80,9 @@ class _TicketPage extends State<TicketPage> {
                 controller: _controller,
                 onChanged: (text) => _updateButtonState(text),
                 decoration: InputDecoration(
+                    errorText: "O código informado é inválido.",
+                    errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red)),
                     filled: true,
                     fillColor: DefaultConfig.defaultTextFieldColor,
                     hintText: "Digite aqui ",
