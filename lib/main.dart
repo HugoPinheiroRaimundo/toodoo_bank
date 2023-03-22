@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:toodoo_bank/pages/Home.dart';
 import 'package:toodoo_bank/pages/ticket_Confirm_page.dart';
 import 'package:toodoo_bank/pages/ticket_page.dart';
 
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // Adiciona font em todo o app
       theme: ThemeData(fontFamily: GoogleFonts.mulish().fontFamily),
-      initialRoute: '/ticketpage',
+      initialRoute: '/homeapp',
       routes: {
         '/ticketpage': (_) => const TicketPage(),
         '/ticketconfirmpage': (_) => const TicketConfirm(),
+        '/homeapp': (_) => const HomeApp(),
       },
     );
   }

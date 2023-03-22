@@ -74,23 +74,33 @@ class _TicketPage extends State<TicketPage> {
           SizedBox(
             width: 311,
             height: 100,
-            child: TextField(
-                maxLines: 2,
-                textInputAction: TextInputAction.send,
-                controller: _controller,
-                onChanged: (text) => _updateButtonState(text),
-                decoration: InputDecoration(
-                    errorText: "O código informado é inválido.",
-                    errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red)),
-                    filled: true,
-                    fillColor: DefaultConfig.defaultTextFieldColor,
-                    hintText: "Digite aqui ",
-                    hintStyle: const TextStyle(color: Colors.grey),
-                    border: const OutlineInputBorder())),
+            child: TextFormField(
+              textInputAction: TextInputAction.send,
+              controller: _controller,
+              onChanged: (text) => _updateButtonState(text),
+              maxLines: 2,
+              decoration: InputDecoration(
+                  errorStyle: TextStyle(color: DefaultConfig.alertError),
+                  focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: DefaultConfig.alertError)),
+                  errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: DefaultConfig.alertError)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: DefaultConfig.alertError))),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'O código informado é inválido.';
+                }
+                //  CallApi().isValidBarCode(value.replaceAll(RegExp('[. ]'), ''));
+                //  return null;
+              },
+            ),
           ),
           const SizedBox(
-            height: 270,
+            height: 300,
           ),
           TextButton(
             onPressed: () {
