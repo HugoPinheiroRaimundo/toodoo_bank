@@ -41,7 +41,9 @@ class _TicketPage extends State<TicketPage> {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back_ios),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                   ),
                   const SizedBox(
                     width: 50,

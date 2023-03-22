@@ -22,5 +22,8 @@ flutter:
   uses-material-design: true
   assets:
   - "assets/icons/calenderIcon.svg"
+  - "assets/icons/barcodeIcon.svg"
+  - "assets/icons/numberedKeyboard.svg"
+
 
        

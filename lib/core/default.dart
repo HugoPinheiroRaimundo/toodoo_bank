@@ -5,7 +5,6 @@ class DefaultConfig {
   static Color defaultTextFieldColor = const Color(0xFFF2F2F5);
   static Color defaultThemeColor = const Color(0xFF2E3299);
   static Color alertError = const Color(0xFFEA005A);
-
   static Color defaultColorText = const Color(0xFF86848E);
 
   //TextStyle
