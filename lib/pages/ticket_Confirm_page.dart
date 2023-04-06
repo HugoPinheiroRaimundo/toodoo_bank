@@ -196,7 +196,7 @@ class _TicketConfirmState extends State<TicketConfirm> {
                   ),
                   const Text("Descrição"),
                   const SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   SizedBox(
                     width: 330,
@@ -208,6 +208,9 @@ class _TicketConfirmState extends State<TicketConfirm> {
                             fillColor: DefaultConfig.defaultTextFieldColor,
                             hintStyle: const TextStyle(color: Colors.grey),
                             border: const OutlineInputBorder())),
+                  ),
+                  const SizedBox(
+                    height: 5,
                   ),
                   const SizedBox(
                     width: 330,

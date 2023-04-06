@@ -11,7 +11,9 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.3
   cupertino_icons: ^1.0.2
+  combined_barcode_scanner: ^0.0.1-dev.1
   flutter_svg: any
+  camera: ^0.10.3+1
 
 dev_dependencies:
   flutter_test:

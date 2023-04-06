@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toodoo_bank/pages/Home.dart';
+import 'package:toodoo_bank/pages/QRcode_page.dart';
 import 'package:toodoo_bank/pages/ticket_Confirm_page.dart';
 import 'package:toodoo_bank/pages/ticket_page.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/ticketpage': (_) => const TicketPage(),
         '/ticketconfirmpage': (_) => const TicketConfirm(),
         '/homeapp': (_) => const HomeApp(),
+        '/qrcode': (_) => const QrcodePage(),
       },
     );
   }
